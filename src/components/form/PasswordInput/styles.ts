@@ -1,7 +1,7 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled, { css, DefaultTheme } from 'styled-components/native'
 
-import { Input } from '..'
+import { Input } from '../Input'
 
 type InputTextProps = {
   isFocused: boolean

@@ -16,7 +16,8 @@
     "jsx": "react-native",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@assets": ["./assets"]
     },
     "noImplicitAny": true
   },

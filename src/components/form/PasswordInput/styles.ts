@@ -1,13 +1,14 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled, { css, DefaultTheme } from 'styled-components/native'
 
+import { Input } from '..'
+
 type InputTextProps = {
   isFocused: boolean
 }
 
 export const Container = styled.View`
   flex-direction: row;
-  justify-content: center;
   width: 100%;
 `
 
@@ -18,21 +19,11 @@ const inputTextModifiers = {
   `
 }
 
-export const InputText = styled.TextInput<InputTextProps>`
+export const InputText = styled(Input)<InputTextProps>`
   ${({ theme, isFocused }) => css`
-    /* width: 100%; */
     flex: 1;
-    height: 50px;
-    margin-bottom: ${theme.spacings.small};
-    border-top-left-radius: ${theme.border.radius.md};
-    border-bottom-left-radius: ${theme.border.radius.md};
-
-    background-color: ${theme.colors.grayLight};
-    color: ${theme.colors.black};
-    font-family: ${theme.fonts.primary500};
-    font-size: ${RFValue(16)}px;
-
-    padding-left: ${theme.spacings.small};
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 
     ${isFocused && inputTextModifiers.isFocused(theme)}
   `}
@@ -48,7 +39,7 @@ const iconContainerModifiers = {
 export const IconContainer = styled.View<InputTextProps>`
   ${({ theme, isFocused }) => css`
     width: 50px;
-    height: 50px;
+    height: ${RFValue(58)}px;
     justify-content: center;
     align-items: center;
 

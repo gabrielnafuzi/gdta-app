@@ -1,20 +1,20 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled, { css, DefaultTheme } from 'styled-components/native'
 
-type InputTextProps = {
+type Containerrops = {
   isFocused: boolean
 }
 
-const inputTextModifiers = {
+const containerModifiers = {
   isFocused: (theme: DefaultTheme) => css`
     border: 2px solid ${theme.colors.primary};
   `
 }
 
-export const InputText = styled.TextInput<InputTextProps>`
+export const Container = styled.TextInput<Containerrops>`
   ${({ theme, isFocused }) => css`
     width: 100%;
-    height: 50px;
+    height: ${RFValue(58)}px;
     margin-bottom: ${theme.spacings.small};
     border-radius: ${theme.border.radius.md};
 
@@ -23,8 +23,8 @@ export const InputText = styled.TextInput<InputTextProps>`
     font-family: ${theme.fonts.primary500};
     font-size: ${RFValue(16)}px;
 
-    padding: 0 ${theme.spacings.small};
+    padding: 0 ${theme.spacings.medium};
 
-    ${isFocused && inputTextModifiers.isFocused(theme)}
+    ${isFocused && containerModifiers.isFocused(theme)}
   `}
 `

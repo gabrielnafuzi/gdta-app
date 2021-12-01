@@ -37,17 +37,17 @@ export const PasswordInput = ({ value, ...props }: PasswordInputProps) => {
         onBlur={handleOnBlur}
         value={value}
         {...props}
-        secureTextEntry={isPasswordVisible}
+        secureTextEntry={!isPasswordVisible}
         autoCorrect={false}
         autoCapitalize="none"
+        keyboardType="default"
         isFocused={isFocused}
-        selectionColor={theme.colors.primary}
       />
 
       <BorderlessButton onPress={handleTogglePasswordVisibility}>
         <S.IconContainer isFocused={isFocused}>
           <Feather
-            name={isPasswordVisible ? 'eye-off' : 'eye'}
+            name={isPasswordVisible ? 'eye' : 'eye-off'}
             size={24}
             color={isFocused ? theme.colors.primary : theme.colors.gray}
           />

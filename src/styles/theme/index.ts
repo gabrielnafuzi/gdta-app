@@ -18,5 +18,11 @@ export const theme = {
     orange: '#E7A74E',
     primary: '#F3603F',
     white: '#FFFFFF'
+  },
+  spacings: {
+    small: '8px',
+    medium: '16px',
+    large: '24px',
+    xxlarge: '48px'
   }
-}
+} as const

@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { View } from 'react-native'
-import styled from 'styled-components/native'
+import { View, Text } from 'react-native'
 
-const StyledView = styled.View`
-  background-color: papayawhip;
-`
-
-const StyledText = styled.Text`
-  color: palevioletred;
-`
+import { Input } from '@/components'
 
 export const HomeScreen = () => {
+  const [email, setEmail] = useState('')
+
   return (
-    <View>
-      <StyledView>
-        <StyledText>Hello World!</StyledText>
-      </StyledView>
+    <View
+      style={{ width: 220, alignItems: 'center', justifyContent: 'center' }}
+    >
+      <Input
+        autoCapitalize="none"
+        keyboardType="email-address"
+        value={email}
+        onChangeText={setEmail}
+      />
+      <Text>{email}</Text>
+      <Input />
     </View>
   )
 }

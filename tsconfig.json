@@ -14,11 +14,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-native",
-    "typeRoots": [
-      "node_modules/@types",
-      "./src/types",
-      "styled-components-react-native"
-    ],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]

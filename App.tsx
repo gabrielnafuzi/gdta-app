@@ -1,12 +1,13 @@
 import React from 'react'
 
+import { StyleSheet, View, Text } from 'react-native'
+
 import {
   useFonts,
   Poppins_400Regular,
   Poppins_500Medium
 } from '@expo-google-fonts/poppins'
 import AppLoading from 'expo-app-loading'
-import { StyleSheet, View, Text } from 'react-native'
 import { ThemeProvider } from 'styled-components'
 
 import { HomeScreen } from '@/screens/Home'

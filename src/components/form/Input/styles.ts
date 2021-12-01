@@ -21,7 +21,7 @@ export const InputText = styled.TextInput<InputTextProps>`
     background-color: ${theme.colors.grayLight};
     color: ${theme.colors.black};
     font-family: ${theme.fonts.primary500};
-    font-size: ${RFValue(14)}px;
+    font-size: ${RFValue(16)}px;
 
     padding: 0 ${theme.spacings.small};
 

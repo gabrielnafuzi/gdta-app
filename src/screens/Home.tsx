@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 
 import { View, Text } from 'react-native'
 
-import { Input } from '@/components'
+import { Input, PasswordInput } from '@/components'
 
 export const HomeScreen = () => {
   const [email, setEmail] = useState('')
 
   return (
     <View
-      style={{ width: 220, alignItems: 'center', justifyContent: 'center' }}
+      style={{ width: 180, alignItems: 'center', justifyContent: 'center' }}
     >
       <Input
         autoCapitalize="none"
@@ -18,7 +18,7 @@ export const HomeScreen = () => {
         onChangeText={setEmail}
       />
       <Text>{email}</Text>
-      <Input />
+      <PasswordInput />
     </View>
   )
 }

@@ -8,7 +8,7 @@ import {
 import AppLoading from 'expo-app-loading'
 import { ThemeProvider } from 'styled-components'
 
-import { HomeScreen } from '@/screens/Home'
+import { Routes } from '@/routes'
 import { theme } from '@/styles/theme'
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <HomeScreen />
+      <Routes />
     </ThemeProvider>
   )
 }

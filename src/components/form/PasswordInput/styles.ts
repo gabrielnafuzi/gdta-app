@@ -38,7 +38,7 @@ const iconContainerModifiers = {
 
 export const IconContainer = styled.View<InputTextProps>`
   ${({ theme, isFocused }) => css`
-    width: 50px;
+    width: ${RFValue(50)}px;
     height: ${RFValue(58)}px;
     justify-content: center;
     align-items: center;

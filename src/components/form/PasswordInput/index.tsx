@@ -36,11 +36,11 @@ export const PasswordInput = ({ value, ...props }: PasswordInputProps) => {
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         value={value}
-        {...props}
         secureTextEntry={!isPasswordVisible}
         autoCorrect={false}
         autoCapitalize="none"
         keyboardType="default"
+        {...props}
         isFocused={isFocused}
       />
 

@@ -5,12 +5,15 @@ import { View } from 'react-native'
 import Toast from 'react-native-toast-message'
 
 import { Button, Input, PasswordInput } from '@/components'
-import { signIn } from '@/services/auth'
+import { useAuth } from '@/hooks'
+import { saveTokenToStorage, signIn } from '@/services/auth'
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const { setUserData } = useAuth()
 
   const handleSubmit = useCallback(async () => {
     setIsSubmitting(true)
@@ -32,8 +35,11 @@ export const LoginForm = () => {
       return
     }
 
+    await saveTokenToStorage(data.token!)
+    setUserData(data.user!)
+
     Toast.show({ type: 'success', text1: 'Login realizado com sucesso! 😎' })
-  }, [email, password])
+  }, [email, password, setUserData])
 
   return (
     <View style={{ width: '100%' }}>

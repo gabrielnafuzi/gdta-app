@@ -20,11 +20,11 @@ export const SignInScreen = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <SafeAreaView style={{ flex: 1 }}>
           <S.InnerContainer>
-            <S.LogoWrapper>
+            <S.Header>
               <LogoSvg width={RFValue(50)} height={RFValue(58)} />
-            </S.LogoWrapper>
 
-            <S.Title>Login</S.Title>
+              <S.Title>Login</S.Title>
+            </S.Header>
 
             <LoginForm />
 

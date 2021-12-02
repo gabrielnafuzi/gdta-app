@@ -15,8 +15,10 @@ const containerModifiers = {
 export const Container = styled(RectButton)<ContainerProps>`
   ${({ theme, isDisabled }) => css`
     width: 100%;
+    height: ${RFValue(56)}px;
 
-    padding: ${theme.spacings.medium};
+    padding: 0 ${theme.spacings.medium};
+    justify-content: center;
     align-items: center;
     border-radius: ${theme.border.radius.lg};
     background-color: ${theme.colors.green};

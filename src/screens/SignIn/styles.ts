@@ -14,7 +14,7 @@ export const InnerContainer = styled.View`
   justify-content: flex-end;
 `
 
-export const LogoWrapper = styled.View`
+export const Header = styled.View`
   ${({ theme }) => css`
     margin: ${theme.spacings.xxlarge} 0;
     align-items: center;
@@ -27,6 +27,6 @@ export const Title = styled.Text`
     font-size: ${RFValue(42)}px;
     text-align: center;
 
-    margin-bottom: ${theme.spacings.xxlarge};
+    margin-top: ${theme.spacings.xxlarge};
   `}
 `

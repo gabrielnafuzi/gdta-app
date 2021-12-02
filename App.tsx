@@ -6,6 +6,7 @@ import {
   Poppins_500Medium
 } from '@expo-google-fonts/poppins'
 import AppLoading from 'expo-app-loading'
+import Toast from 'react-native-toast-message'
 import { ThemeProvider } from 'styled-components'
 
 import { Routes } from '@/routes'
@@ -22,6 +23,8 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes />
+
+      <Toast />
     </ThemeProvider>
   )
 }

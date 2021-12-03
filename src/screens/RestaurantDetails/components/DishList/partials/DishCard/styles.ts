@@ -29,7 +29,7 @@ export const Container = styled.View<ContainerProps>`
 `
 
 export const Content = styled.View`
-  max-width: 74%;
+  max-width: 70%;
 `
 
 export const Title = styled.Text`

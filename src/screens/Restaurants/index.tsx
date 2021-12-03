@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useCallback } from 'react'
 
+import { RefreshControl, SafeAreaView, ScrollView } from 'react-native'
+
 import { StatusBar } from 'expo-status-bar'
 
 import { Logo, Spinner } from '@/components'
@@ -14,7 +16,7 @@ export const RestaurantsScreen = () => {
   const [search, setSearch] = useState('')
   const debouncedValue = useDebounce(search, 400)
 
-  const { data, isLoading } = useRestaurants(debouncedValue)
+  const { data, isLoading, refetch } = useRestaurants(debouncedValue)
 
   const handleRenderList = useCallback(() => {
     if (isLoading) return <Spinner style={{ marginTop: 32 }} />
@@ -27,18 +29,31 @@ export const RestaurantsScreen = () => {
   }, [data?.restaurants, isLoading])
 
   return (
-    <S.Container>
-      <StatusBar style="dark" />
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView
+        contentContainerStyle={{ flex: 1 }}
+        refreshControl={
+          <RefreshControl
+            refreshing={isLoading}
+            onRefresh={refetch}
+            colors={['#f3603f4d', '#f3603fb3', '#f3603f']}
+          />
+        }
+      >
+        <S.Container>
+          <StatusBar style="dark" />
 
-      <S.Header>
-        <Logo width={26} height={30} />
+          <S.Header>
+            <Logo width={26} height={30} />
 
-        <SearchItemField search={search} setSearch={(v) => setSearch(v)} />
-      </S.Header>
+            <SearchItemField search={search} setSearch={(v) => setSearch(v)} />
+          </S.Header>
 
-      <S.ListTitle>Lojas</S.ListTitle>
+          <S.ListTitle>Lojas</S.ListTitle>
 
-      {handleRenderList()}
-    </S.Container>
+          {handleRenderList()}
+        </S.Container>
+      </ScrollView>
+    </SafeAreaView>
   )
 }

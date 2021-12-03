@@ -7,7 +7,6 @@ type ContainerProps = {
 
 const containerModifiers = {
   isFocused: (theme: DefaultTheme) => css`
-    border-bottom-width: 2px;
     border-bottom-color: ${theme.colors.primary};
   `
 }
@@ -17,6 +16,8 @@ export const Container = styled.View<ContainerProps>`
     flex-direction: row;
     margin-top: ${theme.spacings.large};
 
+    border-bottom-width: 2px;
+    border-bottom-color: transparent;
     border-bottom-left-radius: ${theme.border.radius.lg};
     border-bottom-right-radius: ${theme.border.radius.lg};
 

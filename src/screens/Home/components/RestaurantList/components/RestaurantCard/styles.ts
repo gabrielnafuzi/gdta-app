@@ -6,6 +6,7 @@ export const Container = styled.TouchableOpacity`
     width: 100%;
     flex-direction: row;
     align-items: center;
+    margin-top: ${theme.spacings.xsmall};
     margin-bottom: ${theme.spacings.large};
   `}
 `
@@ -27,7 +28,7 @@ export const Title = styled.Text`
     font-size: ${RFValue(14)}px;
     font-family: ${theme.fonts.primary500};
     color: ${theme.colors.black};
-    line-height: 18px;
+    line-height: ${RFValue(18)}px;
   `}
 `
 

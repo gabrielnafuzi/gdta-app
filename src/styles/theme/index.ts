@@ -21,6 +21,8 @@ export const theme = {
     white: '#FFFFFF'
   },
   spacings: {
+    xxsmall: `${RFValue(2)}px` as '2px',
+    xsmall: `${RFValue(4)}px` as '4px',
     small: `${RFValue(8)}px` as '8px',
     medium: `${RFValue(16)}px` as '16px',
     large: `${RFValue(24)}px` as '24px',

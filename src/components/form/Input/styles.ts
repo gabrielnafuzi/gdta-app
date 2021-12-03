@@ -1,7 +1,7 @@
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled, { css, DefaultTheme } from 'styled-components/native'
 
-type Containerrops = {
+type ContainerProps = {
   isFocused: boolean
 }
 
@@ -11,7 +11,7 @@ const containerModifiers = {
   `
 }
 
-export const Container = styled.TextInput<Containerrops>`
+export const Container = styled.TextInput<ContainerProps>`
   ${({ theme, isFocused }) => css`
     width: 100%;
     height: ${RFValue(58)}px;

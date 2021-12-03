@@ -13,7 +13,7 @@ export const theme = {
   colors: {
     black: '#181725',
     gray: '#7C7C7C',
-    grayLight: '#F2F3F2',
+    grayLight: '#E5E5E5',
     green: '#53B175',
     orange: '#E7A74E',
     primary: '#F3603F',

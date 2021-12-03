@@ -2,14 +2,14 @@ import { AxiosError } from 'axios'
 
 import { api } from '@/services'
 
-import { Response, ResponseData, SignInPayload } from './types'
+import { SignInResponse, SignInResponseData, SignInPayload } from './types'
 
 export const signIn = async ({
   email,
   password
-}: SignInPayload): Promise<Response> => {
+}: SignInPayload): Promise<SignInResponse> => {
   try {
-    const response = await api.post<ResponseData>('/sign-in', {
+    const response = await api.post<SignInResponseData>('/sign-in', {
       email,
       password
     })

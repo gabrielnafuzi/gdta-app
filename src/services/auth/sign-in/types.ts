@@ -8,12 +8,12 @@ export type User = {
   email: string
 }
 
-export type ResponseData = {
+export type SignInResponseData = {
   token: string | null
   user: User | null
 }
 
-export type Response = {
-  data: ResponseData
+export type SignInResponse = {
+  data: SignInResponseData
   error: string | null
 }

@@ -6,7 +6,8 @@ import Toast from 'react-native-toast-message'
 
 import { Button, Input, PasswordInput } from '@/components'
 import { useAuth } from '@/hooks'
-import { saveTokenToStorage, signIn } from '@/services/auth'
+import { signIn } from '@/services/auth'
+import { saveTokenToStorage, saveUserToStorage } from '@/services/storage'
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('')
@@ -36,6 +37,7 @@ export const LoginForm = () => {
     }
 
     await saveTokenToStorage(data.token!)
+    await saveUserToStorage(data.user!)
     setUserData(data.user!)
 
     Toast.show({ type: 'success', text1: 'Login realizado com sucesso! 😎' })

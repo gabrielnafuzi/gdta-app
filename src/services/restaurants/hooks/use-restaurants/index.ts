@@ -20,6 +20,7 @@ export const useRestaurants = (
   options: UseQueryOptions = {}
 ) => {
   return useQuery(['restaurants', search], () => getRestaurants(search), {
+    staleTime: 30 * 1000, // 30 seconds
     ...options
   }) as UseQueryResult<{ restaurants: Restaurant[] }, unknown>
 }

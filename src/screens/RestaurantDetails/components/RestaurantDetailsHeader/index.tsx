@@ -7,19 +7,32 @@ import Constants from 'expo-constants'
 import { RFValue } from 'react-native-responsive-fontsize'
 
 import { BackButton, Rate } from '@/components'
-import { getRandomMockValue } from '@/mocks'
 
 import {
-  RestaurantDetailsDeliveryPrice,
+  RestaurantDetailsDeliveryFee,
   RestaurantDetailsDeliveryTime
 } from './partials'
 import * as S from './styles'
 
-const image = {
-  uri: 'https://media-cdn.tripadvisor.com/media/photo-p/11/62/5a/95/brasileirinho-delivery.jpg'
+type RestaurantDetailsHeaderProps = {
+  category: string
+  deliveryFee: string
+  deliveryTime: string
+  image: string
+  name: string
+  rate: string
+  rateAmount: number
 }
 
-export const RestaurantDetailsHeader = () => {
+export const RestaurantDetailsHeader = ({
+  category,
+  deliveryFee,
+  deliveryTime,
+  image,
+  name,
+  rate,
+  rateAmount
+}: RestaurantDetailsHeaderProps) => {
   const navigation = useNavigation()
 
   const handleNavigateToRestaurants = useCallback(() => {
@@ -28,7 +41,7 @@ export const RestaurantDetailsHeader = () => {
 
   return (
     <ImageBackground
-      source={image}
+      source={{ uri: image }}
       resizeMode="cover"
       blurRadius={4}
       style={{ width: '100%', height: RFValue(220) }}
@@ -41,26 +54,24 @@ export const RestaurantDetailsHeader = () => {
 
         <S.Content>
           <S.Title ellipsizeMode="tail" numberOfLines={1}>
-            Brasileirinho Delivery - Uberaba
+            {name}
           </S.Title>
-          <S.Category>{getRandomMockValue('category')}</S.Category>
+          <S.Category>{category}</S.Category>
 
           <S.DetailsContainer>
             <Rate
-              rate="4,3"
-              quantity={239}
+              rate={rate}
+              quantity={rateAmount}
               textColor="white"
               style={{ marginRight: RFValue(22) }}
             />
 
             <RestaurantDetailsDeliveryTime
-              deliveryTime="20 - 30 min"
+              deliveryTime={deliveryTime}
               style={{ marginRight: RFValue(22) }}
             />
 
-            <RestaurantDetailsDeliveryPrice
-              deliveryPrice={getRandomMockValue('price')}
-            />
+            <RestaurantDetailsDeliveryFee deliveryFee={deliveryFee} />
           </S.DetailsContainer>
         </S.Content>
       </S.Container>

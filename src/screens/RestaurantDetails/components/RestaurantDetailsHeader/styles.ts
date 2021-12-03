@@ -5,7 +5,7 @@ export const Container = styled.View`
   ${({ theme }) => css`
     flex: 1;
     padding: 0 ${theme.spacings.large};
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
   `}
 `
 export const Content = styled.View`

@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Rate } from '@/components'
 import { getRandomMockValue } from '@/mocks'
 import { RestaurantDetailsNavigationProp } from '@/routes/app.routes'
-import { Restaurant } from '@/services/restaurants/hooks/use-restaurants/types'
+import { Restaurant } from '@/services/restaurants/types'
 
 import * as S from './styles'
 
@@ -61,7 +61,7 @@ export const RestaurantCard = ({
             <S.DetailText>{restaurant.delivery_time}</S.DetailText>
             <S.DotSeparator />
             <S.DetailText color="green">
-              {getRandomMockValue('price')}
+              {getRandomMockValue('deliveryFee')}
             </S.DetailText>
           </S.DetailsContainer>
         </S.Content>

@@ -4,9 +4,9 @@ import { Animated } from 'react-native'
 
 import { RFValue } from 'react-native-responsive-fontsize'
 
-import { Restaurant } from '@/services/restaurants/hooks/use-restaurants/types'
+import { Restaurant } from '@/services/restaurants/types'
 
-import { RestaurantCard } from './components'
+import { RestaurantCard } from './partials'
 
 type RestaurantListProps = {
   restaurants: Restaurant[]

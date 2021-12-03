@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useCallback } from 'react'
 
+import { StatusBar } from 'expo-status-bar'
+
 import { Logo, Spinner } from '@/components'
 import useDebounce from '@/hooks/use-debounce'
 import { useRestaurants } from '@/services/restaurants'
@@ -26,6 +28,8 @@ export const RestaurantsScreen = () => {
 
   return (
     <S.Container>
+      <StatusBar style="dark" />
+
       <S.Header>
         <Logo width={26} height={30} />
 

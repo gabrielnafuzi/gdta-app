@@ -8,14 +8,14 @@ import { useTheme } from 'styled-components'
 
 import * as S from './styles'
 
-type RestaurantDetailsDeliveryPriceProps = {
-  deliveryPrice: string
+type RestaurantDetailsDeliveryFeeProps = {
+  deliveryFee: string
 } & Pick<ViewProps, 'style'>
 
-export const RestaurantDetailsDeliveryPrice = ({
-  deliveryPrice,
+export const RestaurantDetailsDeliveryFee = ({
+  deliveryFee,
   style
-}: RestaurantDetailsDeliveryPriceProps) => {
+}: RestaurantDetailsDeliveryFeeProps) => {
   const theme = useTheme()
 
   return (
@@ -27,7 +27,7 @@ export const RestaurantDetailsDeliveryPrice = ({
         color={theme.colors.white}
       />
 
-      <S.Text>{deliveryPrice}</S.Text>
+      <S.Text>{deliveryFee}</S.Text>
     </S.Container>
   )
 }

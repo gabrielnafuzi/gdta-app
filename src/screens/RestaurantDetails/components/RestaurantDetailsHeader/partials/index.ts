@@ -1,2 +1,2 @@
 export * from './RestaurantDetailsDeliveryTime'
-export * from './RestaurantDetailsDeliveryPrice'
+export * from './RestaurantDetailsDeliveryFee'

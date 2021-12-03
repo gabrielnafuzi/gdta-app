@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { NavigationProp } from '@react-navigation/native'
+import { NavigationProp, RouteProp } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { RestaurantsScreen, RestaurantDetails } from '@/screens'
@@ -11,6 +11,11 @@ export type AppStackParamList = {
 }
 
 export type RestaurantDetailsNavigationProp = NavigationProp<
+  AppStackParamList,
+  'RestaurantDetails'
+>
+
+export type RestaurantDetailsRouteProp = RouteProp<
   AppStackParamList,
   'RestaurantDetails'
 >

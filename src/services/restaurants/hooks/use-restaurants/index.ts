@@ -1,8 +1,7 @@
 import { useQuery, UseQueryOptions, UseQueryResult } from 'react-query'
 
 import { api } from '@/services/api'
-
-import { Restaurant } from './types'
+import { Restaurant } from '@/services/restaurants'
 
 export const getRestaurants = async (search: string) => {
   const { data } = await api.get<Restaurant[]>('/restaurants', {

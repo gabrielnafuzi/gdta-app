@@ -1,5 +1,5 @@
 const mocks = {
-  price: ['R$ 4,99', 'R$ 5,99', 'R$ 6,99', 'R$ 7,99', 'Grátis'],
+  deliveryFee: ['R$ 4,99', 'R$ 5,99', 'R$ 6,99', 'R$ 7,99', 'Grátis'],
   distance: [
     '0,5 km',
     '1 km',

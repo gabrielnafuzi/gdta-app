@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useCallback } from 'react'
 
-import { RefreshControl, SafeAreaView, ScrollView } from 'react-native'
-
 import { StatusBar } from 'expo-status-bar'
 
 import { Logo, Spinner } from '@/components'

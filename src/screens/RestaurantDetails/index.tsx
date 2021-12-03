@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { Text } from 'react-native'
-
 import { useRoute } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
 

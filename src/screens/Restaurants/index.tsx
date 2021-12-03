@@ -25,35 +25,28 @@ export const RestaurantsScreen = () => {
       return <S.EmptyMessage>Nenhum restaurante encontrado</S.EmptyMessage>
     }
 
-    return <RestaurantList restaurants={data?.restaurants ?? []} />
-  }, [data?.restaurants, isLoading])
+    return (
+      <RestaurantList
+        restaurants={data?.restaurants ?? []}
+        isRefreshing={isLoading}
+        onRefresh={refetch}
+      />
+    )
+  }, [data?.restaurants, isLoading, refetch])
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView
-        contentContainerStyle={{ flex: 1 }}
-        refreshControl={
-          <RefreshControl
-            refreshing={isLoading}
-            onRefresh={refetch}
-            colors={['#f3603f4d', '#f3603fb3', '#f3603f']}
-          />
-        }
-      >
-        <S.Container>
-          <StatusBar style="dark" />
+    <S.Container>
+      <StatusBar style="dark" />
 
-          <S.Header>
-            <Logo width={26} height={30} />
+      <S.Header>
+        <Logo width={26} height={30} />
 
-            <SearchItemField search={search} setSearch={(v) => setSearch(v)} />
-          </S.Header>
+        <SearchItemField search={search} setSearch={(v) => setSearch(v)} />
+      </S.Header>
 
-          <S.ListTitle>Lojas</S.ListTitle>
+      <S.ListTitle>Lojas</S.ListTitle>
 
-          {handleRenderList()}
-        </S.Container>
-      </ScrollView>
-    </SafeAreaView>
+      {handleRenderList()}
+    </S.Container>
   )
 }

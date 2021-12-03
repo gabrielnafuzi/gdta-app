@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react'
 
-import { Animated } from 'react-native'
+import { Animated, RefreshControl } from 'react-native'
 
 import { RFValue } from 'react-native-responsive-fontsize'
 
@@ -10,9 +10,15 @@ import { RestaurantCard } from './partials'
 
 type RestaurantListProps = {
   restaurants: Restaurant[]
+  isRefreshing?: boolean
+  onRefresh?: () => void
 }
 
-export const RestaurantList = ({ restaurants }: RestaurantListProps) => {
+export const RestaurantList = ({
+  restaurants,
+  isRefreshing = false,
+  onRefresh
+}: RestaurantListProps) => {
   const scrollY = useRef(new Animated.Value(0)).current
   const ITEM_SIZE = 90
 
@@ -47,6 +53,13 @@ export const RestaurantList = ({ restaurants }: RestaurantListProps) => {
 
   return (
     <Animated.FlatList
+      refreshControl={
+        <RefreshControl
+          refreshing={isRefreshing}
+          onRefresh={onRefresh}
+          colors={['#f3603f4d', '#f3603fb3', '#f3603f']}
+        />
+      }
       contentContainerStyle={{ paddingTop: RFValue(16) }}
       style={{ flex: 1, width: '100%' }}
       data={restaurants}

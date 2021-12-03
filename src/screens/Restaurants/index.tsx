@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useCallback } from 'react'
 
-import { Logo, Spinner } from '@/components/common'
+import { Logo, Spinner } from '@/components'
 import useDebounce from '@/hooks/use-debounce'
 import { useRestaurants } from '@/services/restaurants'
 

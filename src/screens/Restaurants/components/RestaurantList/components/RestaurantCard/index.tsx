@@ -5,9 +5,9 @@ import { Animated } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
-import { Rate } from '@/components/common'
+import { Rate } from '@/components'
 import { getRandomMockValue } from '@/mocks'
-import { RestaurantDetailsRouteProp } from '@/routes/app.routes'
+import { RestaurantDetailsNavigationProp } from '@/routes/app.routes'
 import { Restaurant } from '@/services/restaurants/hooks/use-restaurants/types'
 
 import * as S from './styles'
@@ -23,7 +23,7 @@ export const RestaurantCard = ({
   scale,
   opacity
 }: RestaurantCardProps) => {
-  const navigation = useNavigation<RestaurantDetailsRouteProp>()
+  const navigation = useNavigation<RestaurantDetailsNavigationProp>()
 
   const handleNavigateToRestaurantDetails = useCallback(() => {
     navigation.navigate('RestaurantDetails', { restaurantId: restaurant.id })

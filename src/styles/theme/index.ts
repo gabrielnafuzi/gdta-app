@@ -18,7 +18,8 @@ export const theme = {
     green: '#53B175',
     orange: '#E7A74E',
     primary: '#F3603F',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    grayOpacity: 'rgba(124, 124, 124, 0.85)'
   },
   spacings: {
     xxsmall: `${RFValue(2)}px` as '2px',

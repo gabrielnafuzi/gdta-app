@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { ViewProps } from 'react-native'
+
 import { MaterialIcons } from '@expo/vector-icons'
 import { RFValue } from 'react-native-responsive-fontsize'
 import { useTheme } from 'styled-components'
@@ -10,13 +12,18 @@ export type RateProps = {
   rate: string
   quantity?: number
   textColor?: 'orange' | 'white'
-}
+} & Pick<ViewProps, 'style'>
 
-export const Rate = ({ rate, quantity, textColor = 'orange' }: RateProps) => {
+export const Rate = ({
+  rate,
+  quantity,
+  textColor = 'orange',
+  style
+}: RateProps) => {
   const theme = useTheme()
 
   return (
-    <S.Container>
+    <S.Container style={style}>
       <MaterialIcons
         name="star"
         size={14}

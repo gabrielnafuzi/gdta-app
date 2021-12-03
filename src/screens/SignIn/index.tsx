@@ -9,7 +9,7 @@ import {
 
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { Logo } from '@/components/common'
+import { Logo } from '@/components'
 
 import { LoginForm } from './components'
 import * as S from './styles'

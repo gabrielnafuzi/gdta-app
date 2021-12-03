@@ -10,7 +10,7 @@ export type AppStackParamList = {
   RestaurantDetails: { restaurantId: string }
 }
 
-export type RestaurantDetailsRouteProp = NavigationProp<
+export type RestaurantDetailsNavigationProp = NavigationProp<
   AppStackParamList,
   'RestaurantDetails'
 >

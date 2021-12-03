@@ -1,9 +1,13 @@
 import React from 'react'
+import { useCallback } from 'react'
 
 import { Animated } from 'react-native'
 
+import { useNavigation } from '@react-navigation/native'
+
 import { Rate } from '@/components/common'
 import { getRandomMockValue } from '@/mocks'
+import { RestaurantDetailsRouteProp } from '@/routes/app.routes'
 import { Restaurant } from '@/services/restaurants/hooks/use-restaurants/types'
 
 import * as S from './styles'
@@ -19,6 +23,12 @@ export const RestaurantCard = ({
   scale,
   opacity
 }: RestaurantCardProps) => {
+  const navigation = useNavigation<RestaurantDetailsRouteProp>()
+
+  const handleNavigateToRestaurantDetails = useCallback(() => {
+    navigation.navigate('RestaurantDetails', { restaurantId: restaurant.id })
+  }, [navigation, restaurant.id])
+
   return (
     <Animated.View
       style={[
@@ -26,7 +36,10 @@ export const RestaurantCard = ({
         { flex: 1, paddingHorizontal: 2 }
       ]}
     >
-      <S.Container activeOpacity={0.6}>
+      <S.Container
+        activeOpacity={0.6}
+        onPress={handleNavigateToRestaurantDetails}
+      >
         <S.Image
           source={{
             uri: restaurant.image_url

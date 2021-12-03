@@ -30,3 +30,15 @@ export const ListTitle = styled.Text`
     border-bottom-color: ${theme.colors.primary};
   `}
 `
+
+export const EmptyMessage = styled.Text`
+  ${({ theme }) => css`
+    width: 100%;
+    text-align: center;
+    font-size: ${RFValue(16)}px;
+    font-family: ${theme.fonts.primary500};
+    color: ${theme.colors.gray};
+
+    margin-top: ${theme.spacings.large};
+  `}
+`

@@ -1,23 +1,28 @@
 import React, { useState } from 'react'
+import { useCallback } from 'react'
 
-import { ActivityIndicator } from 'react-native'
-
-import { useTheme } from 'styled-components'
-
-import { Logo } from '@/components/common'
+import { Logo, Spinner } from '@/components/common'
 import useDebounce from '@/hooks/use-debounce'
 import { useRestaurants } from '@/services/restaurants'
 
 import { RestaurantList, SearchItemField } from './components'
 import * as S from './styles'
 
-export const HomeScreen = () => {
+export const RestaurantsScreen = () => {
   const [search, setSearch] = useState('')
-  const debouncedValue = useDebounce(search, 700)
+  const debouncedValue = useDebounce(search, 400)
 
   const { data, isLoading } = useRestaurants(debouncedValue)
 
-  const theme = useTheme()
+  const handleRenderList = useCallback(() => {
+    if (isLoading) return <Spinner style={{ marginTop: 32 }} />
+
+    if (data?.restaurants?.length === 0) {
+      return <S.EmptyMessage>Nenhum restaurante encontrado</S.EmptyMessage>
+    }
+
+    return <RestaurantList restaurants={data?.restaurants ?? []} />
+  }, [data?.restaurants, isLoading])
 
   return (
     <S.Container>
@@ -29,15 +34,7 @@ export const HomeScreen = () => {
 
       <S.ListTitle>Lojas</S.ListTitle>
 
-      {isLoading ? (
-        <ActivityIndicator
-          color={theme.colors.primary}
-          size={36}
-          style={{ marginTop: 16 }}
-        />
-      ) : (
-        <RestaurantList restaurants={data?.restaurants ?? []} />
-      )}
+      {handleRenderList()}
     </S.Container>
   )
 }

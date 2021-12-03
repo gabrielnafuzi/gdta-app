@@ -14,7 +14,7 @@ export const LoginForm = () => {
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const { setUserData } = useAuth()
+  const { setUserData, setTokenToAuthorizationHeader } = useAuth()
 
   const handleSubmit = useCallback(async () => {
     setIsSubmitting(true)
@@ -38,10 +38,12 @@ export const LoginForm = () => {
 
     await saveTokenToStorage(data.token!)
     await saveUserToStorage(data.user!)
+    setTokenToAuthorizationHeader(data.token!)
+
     setUserData(data.user!)
 
     Toast.show({ type: 'success', text1: 'Login realizado com sucesso! 😎' })
-  }, [email, password, setUserData])
+  }, [email, password, setTokenToAuthorizationHeader, setUserData])
 
   return (
     <View style={{ width: '100%' }}>

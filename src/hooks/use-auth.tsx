@@ -19,6 +19,7 @@ export type AuthContextData = {
   user: User | null
   isInitializing: boolean
   setUserData: (user: User) => void
+  setTokenToAuthorizationHeader: (token: string) => void
 }
 
 export type AuthProviderProps = {
@@ -33,6 +34,10 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const setUserData = (user: User) => setUser(user)
 
+  const setTokenToAuthorizationHeader = (token: string) => {
+    api.defaults.headers.common.Authorization = `Bearer ${token}`
+  }
+
   const handleValidateToken = useCallback(async () => {
     setIsInitializing(true)
 
@@ -46,8 +51,8 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
       setUserData(parsedUser!)
 
-      api.defaults.headers.common.Authorization = `Bearer ${token}`
       setIsInitializing(false)
+      setTokenToAuthorizationHeader(token!)
 
       return
     }
@@ -60,7 +65,14 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   }, [handleValidateToken])
 
   return (
-    <AuthContext.Provider value={{ user, setUserData, isInitializing }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        setUserData,
+        isInitializing,
+        setTokenToAuthorizationHeader
+      }}
+    >
       {children}
     </AuthContext.Provider>
   )

@@ -1,3 +1,4 @@
+import { RFValue } from 'react-native-responsive-fontsize'
 export const theme = {
   border: {
     radius: {
@@ -20,9 +21,9 @@ export const theme = {
     white: '#FFFFFF'
   },
   spacings: {
-    small: '8px',
-    medium: '16px',
-    large: '24px',
-    xxlarge: '48px'
+    small: `${RFValue(8)}px` as '8px',
+    medium: `${RFValue(16)}px` as '16px',
+    large: `${RFValue(24)}px` as '24px',
+    xxlarge: `${RFValue(48)}px` as '48px'
   }
 } as const

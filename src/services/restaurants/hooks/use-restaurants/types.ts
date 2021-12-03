@@ -26,8 +26,9 @@ export type Restaurant = {
   rate: string
   rate_amount: number
   delivery_time: string
+  image_url: string
   address_id: string
   created_at: string
-  address: RestaurantAddress
-  dishes: Dish[]
+  address?: RestaurantAddress
+  dishes?: Dish[]
 }

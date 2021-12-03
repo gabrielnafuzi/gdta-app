@@ -7,7 +7,7 @@ type ContainerProps = {
 
 const containerModifiers = {
   isFocused: (theme: DefaultTheme) => css`
-    border-bottom-width: 3px;
+    border-bottom-width: 2px;
     border-bottom-color: ${theme.colors.primary};
   `
 }

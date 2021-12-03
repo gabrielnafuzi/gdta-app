@@ -8,7 +8,6 @@ import * as S from './styles'
 type SearchItemFieldProps = {
   search: string
   setSearch: (search: string) => void
-  onSearch: (value: string) => void
 }
 
 export const SearchItemField = ({

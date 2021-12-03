@@ -18,8 +18,9 @@ import { queryClient } from '@/services'
 import { theme } from '@/styles/theme'
 
 LogBox.ignoreLogs([
-  'Setting a timer for a long period of time, i.e. multiple minutes'
-])
+  'Setting a timer for a long period of time, i.e. multiple minutes',
+  'VirtualizedLists should never be nested'
+]) // TODO: Remove when fixed
 
 export default function App() {
   const [fontsLoaded] = useFonts({

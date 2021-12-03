@@ -7,9 +7,9 @@ import {
   View
 } from 'react-native'
 
-import LogoSvg from '@assets/logo.svg'
-import { RFValue } from 'react-native-responsive-fontsize'
 import { SafeAreaView } from 'react-native-safe-area-context'
+
+import { Logo } from '@/components/common'
 
 import { LoginForm } from './components'
 import * as S from './styles'
@@ -21,7 +21,7 @@ export const SignInScreen = () => {
         <SafeAreaView style={{ flex: 1 }}>
           <S.InnerContainer>
             <S.Header>
-              <LogoSvg width={RFValue(50)} height={RFValue(58)} />
+              <Logo />
 
               <S.Title>Login</S.Title>
             </S.Header>
